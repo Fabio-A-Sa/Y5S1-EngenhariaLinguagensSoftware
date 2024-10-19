@@ -33,3 +33,8 @@ return computer()
         .end();
 ```
 
+This can be implemented using function sequence calls as well.
+
+## Parsing Layer
+
+Necessitamos de `ExpressionBuilders`, que se dedicam à criação ou manipulação de objectos internos, que no final serão retornados com as exigências do *method chaining* aplicado. É um objecto, ou famílias de objectos, que providenciam uma interface fluente criada em cima de uma API baseada na linguagem host.
