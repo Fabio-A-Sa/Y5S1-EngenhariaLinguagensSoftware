@@ -14,7 +14,8 @@ Criada a partir de uma general-purpose language, como Java, onde usa um subset d
 
 ## Benefits
 
+- Melhora a produtividade do desenvolvimento, porque é uma forma mais clara e objectiva (abstract até) de comunicação entre as partes, assim como de debug e de code improvement. Como é uma linguagem limitada, também limita os tipos de erros que podem ocorrer;
+- Permite que o cliente perceba melhor o que se está a fazer, sem que tenha de entender internamente da implementação;
 
-
-## Problems
+## Problems and Limitations
 
