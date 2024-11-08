@@ -21,5 +21,5 @@ Criada a partir de uma general-purpose language, como Java, onde usa um subset d
 
 - Problemas no aprendizado de novas DSLs, tem de haver um período de adaptação de qualquer forma. No entanto o esforço de aprendizado não se compara com uma general-purpose language;
 - É mais complicado entender o modelo por detrás das DSLs que a própria DSL, daí a camada extra de abstração necessária;
-- Custo de construção e manutenção;
-- 
+- Custo de construção e manutenção, porque os desenvolvedores não estão habituados a saber lidar com a sua implementação, podendo nesse caso ser um bom contra-exemplo;
+- A qualidade e a construção da abstração, que tem tendência a evoluir e não torná-la estática;
