@@ -16,5 +16,9 @@
 - Tem de haver um esforço inicial no aprendizado de novas DSL, compreender o modelo por detrás da DSL é mais complicado que a DSL em si;
 - Há custo na construção e manutenção, assim como na idealização da abstração;
 - A External DSL promove qualquer sintaxe, e o parsing para internal DSL passa por uma tree com uma tradução ou Delimiter Directed Translation or Syntax Direct Translation;
-- DDT: 
-- SDT: 
+- DDT: separação dos tokens através de limitadores fixos, como linhas ou keywords. para objectos hierárquicos é mais complexo;
+- SDT: definindo uma gramática como XText;
+- Recursive descendant parser: rule -> função para o parser da gramática;
+- Parser combinator: rule -> object, e compor objects para ser a gramática;
+- Parser generator: gera logo código para o parser da gramática;
+
