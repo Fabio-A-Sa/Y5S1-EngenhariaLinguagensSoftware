@@ -7,4 +7,5 @@
 - Method Chaining através de Expression Builders, onde a chaining tem meaning;
 - Existe necessidade de uma parsing layer de External para Internal DSL, que transforma tudo em chaining;
 - Expression Builder para uma fluent interface sobre uma command-query API na linguagem host;
+- Static factory methods ajudam a evitar o `new` na chain;
 - 
