@@ -21,4 +21,3 @@
 - Recursive descendant parser: rule -> função para o parser da gramática;
 - Parser combinator: rule -> object, e compor objects para ser a gramática;
 - Parser generator: gera logo código para o parser da gramática;
-
