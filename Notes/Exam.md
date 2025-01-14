@@ -21,3 +21,10 @@
 - Recursive descendant parser: rule -> função para o parser da gramática;
 - Parser combinator: rule -> object, e compor objects para ser a gramática;
 - Parser generator: gera logo código para o parser da gramática;
+- Output de External para Semantic Model através de embeeded translation (1 passo, por vezes com symbol table para intermediate parsing data) e tree construction (2 passos, syntax tree e translation, com symbol table);
+- Source-to-Source programs, para transpilers, reflection, compilation passes;
+- STS mantém toda a informação do source code (comments, loops, high level data structures), fica updated com novas compiler versions, compatível com qualquer compilador que aceite a linguagem, utilização de DSL/APIs que atenuam a curva de aprendizagem;
+- LARA passou de AspectOrientedLanguage (AOP) para separação de conceitos, em requisitos não funcionais (optimização, avaliação, exploração, instrumentalização);
+- LARA optou por imperative (expressiva, mais controlo) do que declarativa (simples e mais focada);
+- LARA é uma framework general-purpose mas continua a usar uma DSL porque desenvolver uma linguagem é mais complexo que manter uma API/Internal DSL;
+- 
