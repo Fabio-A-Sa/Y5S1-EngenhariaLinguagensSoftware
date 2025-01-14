@@ -25,6 +25,7 @@
 - Source-to-Source programs, para transpilers, reflection, compilation passes;
 - STS mantém toda a informação do source code (comments, loops, high level data structures), fica updated com novas compiler versions, compatível com qualquer compilador que aceite a linguagem, utilização de DSL/APIs que atenuam a curva de aprendizagem;
 - LARA passou de AspectOrientedLanguage (AOP) para separação de conceitos, em requisitos não funcionais (optimização, avaliação, exploração, instrumentalização);
-- LARA optou por imperative (expressiva, mais controlo) do que declarativa (simples e mais focada);
-- LARA é uma framework general-purpose mas continua a usar uma DSL porque desenvolver uma linguagem é mais complexo que manter uma API/Internal DSL;
-- 
+- LARA 1.0 optou por imperative (expressiva, mais controlo) do que declarativa (simples e mais focada);
+- LARA 2.0 é uma framework general-purpose mas continua a usar uma DSL porque desenvolver uma linguagem é mais complexo que manter uma API/Internal DSL;
+- Existe um esforço para extender a linguagem, com direito a integração com IDEs, documentação e testing;
+- LARA 3.0 não é mais uma DSL;
