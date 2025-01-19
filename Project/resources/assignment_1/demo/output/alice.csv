@@ -1,0 +1,7 @@
+File Name,Criterion,Splitter,CPP Alpha,Min Samples Split,Min Samples Leaf
+decision_tree_1.json,gini,best,0.0,2,1
+decision_tree_3.yaml,best,best,0.03,4,1
+decision_tree_2.json,entropy,random,0.015,3,1
+decision_tree_1.yaml,gini,best,0,2,1
+decision_tree_3.json,best,best,0.03,4,1
+decision_tree_2.yaml,entropy,random,0.015,3,1

@@ -1,0 +1,107 @@
+grammar org.xtext.example.mydsl.Preql with org.eclipse.xtext.common.Terminals
+
+generate preql "http://www.xtext.org/example/mydsl/Preql"
+
+Model:
+    statements+=Statement*;
+
+Statement:
+    CreateTable | ImportDataFile | ImportDataFolder | ImportDataFolders | DefineSuffix | DefinePrefix | OutputTable | AddColumnGlobal | RenameColumn | RemoveColumn | RowOperation;
+
+CreateTable:
+    'CREATE TABLE' name=STRING ';';
+
+ImportDataFile:
+    'IMPORT DATA FROM FILE' sourcePath=STRING '{'
+        operations+=Operation*
+        ('FILTER BY' filter=Filter)? // Optional filtering by specific conditions
+    '};';
+
+ImportDataFolder:
+    'IMPORT DATA FROM FOLDER' sourcePath=STRING ('ONLY' extType=EXT_TYPE)? '{'
+        operations+=Operation*
+        ('FILTER BY' filter=Filter)? // Optional filtering by specific conditions
+    '};';
+
+ImportDataFolders:
+    'IMPORT DATA FROM FOLDERS' sourcePath=STRING '{'
+	    'WITH EXTENSIONS' '{'
+	        extensions+=Extension*
+	    '};'
+    '};';
+
+
+Extension:
+    'EXTENSION' type=EXT_TYPE '{'
+        ('FILTER BY' filter=Filter)? // Optional filtering by specific conditions
+        operations+=Operation*
+    '};';
+
+Operation:
+    SelectionTable | SelectionColumn | AddColumnNested | OperationAtRows;
+
+SelectionTable:
+    'SELECT TABLE' tableName=TableName ('BY' columnFilter=COLUMN_FILTER)? ';';
+
+SelectionColumn:
+    'SELECT COLUMN' columnName=TableName ('BY' columnFilter=COLUMN_FILTER)? ';';
+
+Filter:
+    '(' targetPath=STRING ',' function=FUNCTION ',' columns+=ColumnList ',' targetN=INT ');';
+
+AddColumnNested:
+    'ADD COLUMN' columnName=STRING 'AS' columnType=STRING ('AT' columnPosition=COLUMN_POSITION)?';';
+
+AddColumnGlobal:
+	'ADD GLOBAL COLUMN' columnName=STRING 'AS' columnType=STRING ('AT' columnPosition=COLUMN_POSITION)? ';';
+
+OperationAtRows:
+	OperationType=OPERATION_TYPE column1=STRING 'AND' column2=STRING 'TO' columnFinal=STRING';';
+
+RenameColumn:
+    'RENAME COLUMN' columnName=STRING 'TO' newColumnName=STRING ';';
+
+RemoveColumn:
+    'REMOVE COLUMN' columnName=STRING ';';
+
+RowOperation:
+	rowOperation=(AddAll | AverageAll);
+
+AddAll:
+	'ADD *;';
+
+AverageAll:
+	'AVERAGE *;';
+
+DefineSuffix:
+    'ADD SUFFIX' suffix=STRING 'TO' appliesTo=STRING ';';
+
+DefinePrefix:
+    'ADD PREFIX' prefix=STRING 'TO' appliesTo=STRING ';';
+
+OutputTable:
+    'EXPORT TO' outputPath=STRING ';';
+
+TableName:
+    '*' | STRING;
+
+ColumnList:
+    '[' STRING (',' STRING)* ']';
+
+enum COLUMN_FILTER:
+	NULL | COMPOSITE = 'COMPOSITE' | NON_COMPOSITE = 'NON-COMPOSITE';
+
+enum COLUMN_POSITION:
+	NULL | FIRST | LAST;
+
+enum OPERATION_TYPE:
+	SUM | MUL | DIV | SUB;
+
+enum EXT_TYPE:
+    NULL | YAML | XML | JSON;
+
+enum FUNCTION:
+    NULL | MAX | MIN;
+
+terminal STRING:
+    '"' ('\\' . | !('\\' | '"'))* '"';

@@ -1,0 +1,12 @@
+CREATE TABLE "Alice Table";
+
+IMPORT DATA FROM FOLDER "resources/assignment_1/input/" ONLY YAML {
+    SELECT COLUMN "params/criterion";
+};
+
+IMPORT DATA FROM FOLDER "resources/assignment_1/input/" ONLY YAML {
+    SELECT COLUMN "params/splitter";
+    ADD COLUMN "File" AS "FILENAME";
+};
+
+EXPORT TO "resources/assignment_3/output/alice.html";

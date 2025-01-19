@@ -1,0 +1,25 @@
+---
+app1:
+  results:
+    static:
+      nodes: 1056
+      functions: 192
+    dynamic:
+      iterations: 96096
+      calls: 9696
+app2:
+  results:
+    static:
+      nodes: 2112
+      functions: 384
+    dynamic:
+      iterations: 192192
+      calls: 19392
+total:
+  results:
+    static:
+      nodes: 3168
+      functions: 576
+    dynamic:
+      iterations: 288288
+      calls: 29088

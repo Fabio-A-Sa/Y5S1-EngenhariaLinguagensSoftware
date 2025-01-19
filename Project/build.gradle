@@ -1,0 +1,66 @@
+plugins {
+    // For runnable JARs
+    id 'application'
+    id 'distribution'
+    id 'java'
+}
+
+// Java version
+java {
+    sourceCompatibility = JavaVersion.VERSION_21 // Change to 21
+    targetCompatibility = JavaVersion.VERSION_21 // Change to 21
+}
+
+// Repositories providers
+repositories {
+    mavenCentral()
+}
+
+// Project dependencies
+dependencies {
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.0'
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.15.0'
+    implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.15.0'
+    implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.15.0'
+    implementation 'com.google.code.gson:gson:2.8.8'
+    
+    testImplementation 'junit:junit:4.13.1'
+    
+    // Add JARs in folder 'libs' as dependencies
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation group: 'org.eclipse.xtext', name: 'org.eclipse.xtext', version: '2.37.0'
+}
+
+// Project sources
+sourceSets {
+    main {
+        java {
+            srcDir 'src'               
+        }
+        resources {
+            srcDir 'src'
+        }
+    }
+    
+    test {
+        java {
+            srcDir 'test'
+        }
+        resources {
+            srcDir 'test'
+        }
+    }
+}
+
+// Entry point of the program
+application {
+    mainClass.set('pt.up.fe.els2024.Main')
+}
+
+// Task to generate Javadoc
+javadoc {
+    destinationDir = file("${rootDir}/javadoc")
+    classpath = sourceSets.main.output + configurations.runtimeClasspath
+    source = sourceSets.main.allJava
+}

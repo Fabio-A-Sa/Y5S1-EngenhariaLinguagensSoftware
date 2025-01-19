@@ -1,0 +1,76 @@
+{
+    "functions": [
+        {
+            "time%": 1.18,
+            "name": "foo1()",
+            "seconds": 1.21,
+            "calls": 19
+        },
+        {
+            "time%": 10.73,
+            "name": "foo2()",
+            "seconds": 11.00,
+            "calls": 22
+        },
+        {
+            "time%": 14.87,
+            "name": "foo3()",
+            "seconds": 15.23,
+            "calls": 9
+        },
+        {
+            "time%": 7.47,
+            "name": "foo4()",
+            "seconds": 7.65,
+            "calls": 11
+        },
+        {
+            "time%": 0.35,
+            "name": "foo5()",
+            "seconds": 0.36,
+            "calls": 21
+        },
+        {
+            "time%": 21.00,
+            "name": "foo6()",
+            "seconds": 21.52,
+            "calls": 7
+        },
+        {
+            "time%": 10.82,
+            "name": "foo7()",
+            "seconds": 11.08,
+            "calls": 6
+        },
+        {
+            "time%": 2.73,
+            "name": "foo8()",
+            "seconds": 2.80,
+            "calls": 2
+        },
+        {
+            "time%": 5.48,
+            "name": "foo9()",
+            "seconds": 5.62,
+            "calls": 21
+        },
+        {
+            "time%": 8.94,
+            "name": "foo10()",
+            "seconds": 9.16,
+            "calls": 14
+        },
+        {
+            "time%": 15.68,
+            "name": "foo11()",
+            "seconds": 16.07,
+            "calls": 28
+        },
+        {
+            "time%": 0.75,
+            "name": "foo12()",
+            "seconds": 0.76,
+            "calls": 25
+        }
+    ]
+}

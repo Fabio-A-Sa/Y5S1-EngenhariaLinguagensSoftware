@@ -1,0 +1,7 @@
+File Name,File Extension,Min Samples Split,Min Samples Leaf,Min Samples Total
+decision_tree_1.json,json,2,1,3
+decision_tree_3.yaml,yaml,4,1,8
+decision_tree_2.json,json,3,1,12
+decision_tree_1.yaml,yaml,2,1,15
+decision_tree_3.json,json,4,1,20
+decision_tree_2.yaml,yaml,3,1,24

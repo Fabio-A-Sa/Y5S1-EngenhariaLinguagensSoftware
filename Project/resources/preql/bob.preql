@@ -1,0 +1,21 @@
+CREATE TABLE "Bob Table";
+
+IMPORT DATA FROM FILE "resources/assignment_2/input/vitis-report.xml" {
+    SELECT TABLE "/AreaEstimates/Resources";
+};
+
+IMPORT DATA FROM FILE "resources/assignment_2/input/decision_tree.yaml" {
+    SELECT TABLE * BY NON-COMPOSITE;
+};
+
+IMPORT DATA FROM FILE "resources/assignment_2/input/decision_tree.yaml" {
+    SELECT TABLE "params";
+};
+
+IMPORT DATA FROM FILE "resources/assignment_2/input/profiling.json" {
+    FILTER BY ("/functions/time%", MAX, ["name", "time%"], 1);
+};
+
+ADD GLOBAL COLUMN "Folder" AS "/input/" AT FIRST;
+
+EXPORT TO "resources/assignment_3/output/bob.html";

@@ -1,0 +1,130 @@
+{
+    "general": {
+        "input_folder": "resources/assignment_1/demo/input/",
+        "output_folder": "resources/assignment_1/demo/output/"
+    },
+    "process": [
+        {
+            "type": "Rename",
+            "args": {
+                "column": "params",
+                "attributes": {
+                    "criterion": "Criterion",
+                    "splitter": "Splitter",
+                    "ccp_alpha": "CPP Alpha",
+                    "min_samples_split": "Min Samples Split",
+                    "min_samples_leaf": "Min Samples Leaf"
+                }
+            }
+        },
+        {
+            "type": "AddCol",
+            "args": {
+                "name": "File Name",
+                "content": "FILENAME"
+            }
+        },
+        {
+            "type": "AddCol",
+            "args": {
+                "name": "File Extension",
+                "content": "EXTENSION"
+            }
+        },
+        {
+            "type": "Sum",
+            "args": {
+                "name": "Min Samples Total",
+                "cols": ["Min Samples Leaf", "Min Samples Split"]
+            }
+        }
+    ],
+    "export": [
+        {
+            "columns": [
+                {
+                    "name": "File Name"
+                },
+                {
+                    "name": "Criterion"
+                },
+                {
+                    "name": "Splitter"
+                },
+                {
+                    "name": "CPP Alpha"
+                },
+                {
+                    "name": "Min Samples Split"
+                },
+                {
+                    "name": "Min Samples Leaf"
+                }
+            ],
+            "output_file": "alice.csv"
+        },
+        {
+            "columns": [
+                {
+                    "name": "File Name"
+                },
+                {
+                    "name": "Criterion"
+                },
+                {
+                    "name": "Splitter"
+                },
+                {
+                    "name": "CPP Alpha"
+                },
+                {
+                    "name": "Min Samples Split"
+                },
+                {
+                    "name": "Min Samples Leaf"
+                }
+            ],
+            "output_file": "alice.html"
+        },
+        {
+            "columns": [
+                {
+                    "name": "File Name"
+                },
+                {
+                    "name": "File Extension"
+                },
+                {
+                    "name": "Min Samples Split"
+                },
+                {
+                    "name": "Min Samples Leaf"
+                },
+                {
+                    "name": "Min Samples Total"
+                }
+            ],
+            "output_file": "demo.csv"
+        },
+        {
+            "columns": [
+                {
+                    "name": "File Name"
+                },
+                {
+                    "name": "File Extension"
+                },
+                {
+                    "name": "Min Samples Split"
+                },
+                {
+                    "name": "Min Samples Leaf"
+                },
+                {
+                    "name": "Min Samples Total"
+                }
+            ],
+            "output_file": "demo.html"
+        }
+    ]
+}

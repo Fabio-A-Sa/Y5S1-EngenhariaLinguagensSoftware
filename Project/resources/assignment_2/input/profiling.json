@@ -1,0 +1,33 @@
+{
+    "functions": [
+        {
+            "time%": 0.61,
+            "name": "__chkstk_ms",
+            "seconds": 0.01
+        },
+        {
+            "time%": 0.00,
+            "name": "copy_alloc_d",
+            "seconds": 0.00,
+            "calls": 9
+        },
+        {
+            "time%": 99.39,
+            "name": "matrix_mulv3_tdtdptd",
+            "seconds": 1.62,
+            "calls": 8
+        },
+        {
+            "time%": 0.00,
+            "name": "new_array_helper_d",
+            "seconds": 0.00,
+            "calls": 19
+        },
+        {
+            "time%": 0.00,
+            "name": "zeros_d2",
+            "seconds": 0.00,
+            "calls": 9
+        }
+    ]
+}

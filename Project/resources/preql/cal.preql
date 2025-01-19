@@ -1,0 +1,26 @@
+CREATE TABLE "Cal Table";
+
+IMPORT DATA FROM FOLDERS "resources/assignment_3/input/" {
+    WITH EXTENSIONS {
+        EXTENSION YAML {
+            SELECT TABLE "/total/results/dynamic";
+        };
+        EXTENSION XML {
+            SELECT TABLE "/total/results/static";
+        };
+        EXTENSION JSON {
+            FILTER BY ("/functions/time%", MAX, ["name #1", "time% #1", "name #2", "time% #2", "name #3", "time% #3"], 3);
+            ADD COLUMN "Folder" AS "FOLDERNAME";
+        };
+    };
+};
+
+ADD SUFFIX "(Dynamic)" TO "iterations";
+ADD SUFFIX "(Dynamic)" TO "calls";
+ADD SUFFIX "(Static)" TO "nodes";
+ADD SUFFIX "(Static)" TO "functions";
+
+ADD *;
+AVERAGE *;
+
+EXPORT TO "resources/assignment_3/output/cal.html";

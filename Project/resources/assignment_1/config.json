@@ -1,0 +1,59 @@
+{
+    "general": {
+        "input_folder": "resources/assignment_1/input/",
+        "output_folder": "resources/assignment_1/output/"
+    },
+    "process": [
+        {
+            "type": "Rename",
+            "args": {
+                "column": "params",
+                "attributes": {
+                    "criterion": "Criterion",
+                    "splitter": "Splitter",
+                    "ccp_alpha": "CPP Alpha",
+                    "min_samples_split": "Min Samples Split"
+                }
+            }
+        },
+        {
+            "type": "AddCol",
+            "args": {
+                "name": "File Name",
+                "content": "FILENAME"
+            }
+        },
+        {
+            "type": "Sum",
+            "args": {
+                "name": "Test",
+                "cols": ["n_features_", "n_outputs_"]
+            }
+        }
+    ],
+    "export": [
+        {
+            "columns": [
+                {
+                    "name": "File Name"
+                },
+                {
+                    "name": "Criterion"
+                },
+                {
+                    "name": "Splitter"
+                },
+                {
+                    "name": "CPP Alpha"
+                },
+                {
+                    "name": "Min Samples Split"
+                },
+                {
+                    "name": "n_classes_"
+                }
+            ],
+            "output_file": "output.csv"
+        }
+    ]
+}
